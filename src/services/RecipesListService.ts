@@ -1,3 +1,4 @@
+import AppError from '../errors/AppError';
 import order from '../utils/RecipeAlphabeticalOrder';
 import GiphyService from './GiphyService';
 import RecipePuppyService from './RecipePuppyService';
@@ -23,6 +24,10 @@ class RecipesListService {
 		const giphyService = new GiphyService();
 
 		const ingredientsList = ingredientsParam.split(',');
+
+		if (ingredientsList.length > 3) {
+			throw new AppError('Invalid number of ingredients.', 400);
+		}
 
 		const recipesResponse: IResponse = {
 			keywords: ingredientsList.sort(),

@@ -42,6 +42,18 @@ describe('RecipeListService Test', () => {
 		done();
 	});
 
+	test('should GET message error -  with 4 ingredients ', async done => {
+		const response = await request(app).get(
+			'/recipes/?i=tomato,chicken,rice,onion'
+		);
+
+		expect(response.statusCode).toBe(400);
+		expect(typeof response.body.message).toEqual('string');
+		expect(response.body.message).toEqual('Invalid number of ingredients.');
+
+		done();
+	});
+
 	test('should GET message error -  with no params ', async done => {
 		const response = await request(app).get('/recipes');
 
