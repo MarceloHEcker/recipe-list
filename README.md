@@ -4,9 +4,9 @@ Aplicação desenvolvida com Node.js para o teste da Delivery Much, o maior apli
 
 ### Detalhes de Implementação
 
-Aplicação desenvolvida utilizando **NodeJS**, **Typescript** e utilizando TDD (Test Driven Development). Quando desenvolvi a aplicação a primeira coisa que pensei foi na estrutura do projeto, depois nos testes e por último nos detalhes técnicos da aplicação. Para a realização dos testes optei pela biblioteca de testes **Jest** já que tenho mais experiência com ela. Para realizar os testes de Integração optei pelo uso do **Supertest**, já que ele funciona muito em parceria com o Jest.
+Aplicação desenvolvida utilizando **NodeJS**, **Typescript** e utilizando **TDD** (Test Driven Development). Quando desenvolvi a aplicação a primeira coisa que pensei foi na estrutura do projeto, depois nos testes e por último nos detalhes técnicos da aplicação. Para a realização dos testes optei pela biblioteca de testes **Jest**, já que tenho mais experiência com ela. Para realizar os testes de Integração, optei pelo uso do **Supertest**, já que ele funciona muito bem em parceria com o Jest.
 
-Por se tratar de uma aplicação com uma complexidade simples, optei por não desenvolver com todos os conceitos do **SOLID** e do **DDD**.
+Por se tratar de uma aplicação com uma complexidade simples, optei por não desenvolver utilizando todos os conceitos do **SOLID** e do **DDD**.
 
 Para esse teste forma utilizadas duas APIs externas:
 
@@ -17,12 +17,15 @@ Para utilizar a Giphy API é necessário criar uma API Key, disponível no [link
 
 ### 1. Executar a aplicação
 
-Para colocar a aplicação desenvolvida em funcionamento você precisará iniciar um container da imagem definida no arquivo Dockerfile.
-
 Você precisará de um arquivo **.env** com a seguinte variável:
 GIPHY_KEY=
 
-#### 1.2 Pelo código-fonte
+
+Para colocar a aplicação desenvolvida em funcionamento você poderá optar pelo uso da imagem definida no Dockerfile do projeto ou rodar diretamente através do código. 
+
+Segue alguns detalhes sobre a execução da aplicação.
+
+#### 1.1 Execução pelo código-fonte
 
 1. Baixe os arquivos ou clone o seguinte repositório:
 
@@ -54,7 +57,7 @@ ou
 yarn dev:server
 ```
 
-4. The application rodará na porta padrão 3333.
+4. A aplicação rodará na porta padrão 3333.
 
 ```
 http://localhost:3333
@@ -118,7 +121,7 @@ yarn lint
 
 ##### Paginação das APIs externas
 
-Como na descrição do teste não havia detalhes sobre a paginação do projeto, optei por retornar apenas as 10 primeiras receitas da api do Recipe Puppy e um GIF para cada receita.
+Como na descrição do teste não havia detalhes sobre a paginação dos itens do projeto, optei por retornar apenas as 10 primeiras receitas da API do Recipe Puppy e um GIF para cada receita.
 
 ##### Mensagens de Commit
 
@@ -134,10 +137,10 @@ Costumo utilizar algumas regras definidas no GitFlow, como a criação de featur
 - **MAK** repository related changes - alterações no .gitignore, pipeline, configurações do apache (ssl.conf), Dockerfile, tslint, etc...
 - **TEST** related to test code only - apenas arquivos de teste
 
-A descrição da atividade vem posterior a tag e após a mensagem vem o código da tarefa desenvolvido (como por exemplo, o código da tarefa em um sistema de gerenciamento de projetos como o JIRA). Ex.:
+A descrição da atividade vem posterior a tag e após a mensagem vem o código da tarefa desenvolvida (como por exemplo, o código da tarefa em um sistema de gerenciamento de projetos como o JIRA). Ex.:
 
 > [FIX] Corrigindo download de documentos [COD-999]
 
 ##### Ingredientes sem receitas
 
-Quando a consulta de ingredientes na API Recipe Puppy não retornar resultados, devido aos ingredientes passados por parâmetro, optei por não retornar nenhuma informação no corpo da requisição, em um resultado com o status 204 (NO CONTENT).
+Quando a consulta de ingredientes na API Recipe Puppy não retornar resultados, devido aos ingredientes passados por parâmetro, optei por não retornar nenhuma informação no corpo da requisição, passando um resultado vazio com o status 204 (NO CONTENT).
