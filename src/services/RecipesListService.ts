@@ -48,8 +48,8 @@ class RecipesListService {
 
 			auxRecipeResponse.push({
 				title,
-				link: href,
 				ingredients: ingredients.split(', ').sort(),
+				link: href,
 				gif: giphy.data.length ? giphy.data[0].url : '',
 			});
 		};
