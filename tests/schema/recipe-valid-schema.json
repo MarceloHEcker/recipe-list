@@ -1,0 +1,50 @@
+{
+  "title": "Recipe Schema",
+  "type": "object",
+  "required": [
+    "keywords",
+    "recipes"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "keywords": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "recipes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "title",
+          "ingredients",
+          "link",
+          "gif"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "ingredients": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "link": {
+            "type": "string"
+          },
+          "gif": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
