@@ -100,6 +100,20 @@ ou
 yarn test
 ```
 
+#### 1.6 Rodando o Lint 
+
+Você poderá rodar os testes de lint do código da aplicação com o seguinte comando:
+
+```
+npm lint
+```
+
+ou
+
+```
+yarn lint
+```
+
 #### Observações
 
 ##### Paginação das APIs externas
